@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for hook in `find -L .git/hooks/pre-commit-hooks -type f`
+do
+    ${hook} "$@"
+done

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+./bin/create-applications-index.sh
+git add docs/applications/index.md
