@@ -1,0 +1,5 @@
+site_name: mac-setup
+nav:
+  - Home: index.md
+  - dotfiles: dotfiles.md
+  - Applicazioni: applications/index.md
