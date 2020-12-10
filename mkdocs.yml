@@ -3,3 +3,9 @@ nav:
   - Home: index.md
   - dotfiles: dotfiles.md
   - Applicazioni: applications/index.md
+theme:
+  name: readthedocs
+  highlightjs: true
+  hljs_languages:
+    - php
+    - rust
