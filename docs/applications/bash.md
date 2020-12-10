@@ -23,7 +23,7 @@ Notare che la cartella è `/usr/local/bin/bash`, ovvero quella di Brew, non quel
 
 Rif: [How to change bash versions on Mac with Homebrew - DEV][2]
 
-## bashrc vs bash_profile_
+## bashrc vs bash_profile
 
 > bash_profile is executed for login shells, while .bashrc is executed for interactive non-login shells._
 
