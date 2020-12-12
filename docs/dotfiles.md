@@ -11,8 +11,6 @@ I dotfiles sono organizzati nel repo per essere facilmente trasportati e install
 git clone git@github.com:magobaol/dotfiles.git
 ```
 
-
-
 Assicurarsi di essere in shell bash.
 
 	cd dotfiles
