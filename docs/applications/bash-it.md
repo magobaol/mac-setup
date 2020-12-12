@@ -7,11 +7,11 @@
 ## Installazione
 Poiché bash-it deve essere installato scaricando il repo da github e lanciando qualche comando, ho preferito metterlo come submodule git del repo dotfiles (nella sottocartella `/bash`), e installarlo durante l'esecuzione di dotbot.
 
-Bash-it è come un programma che deve essere lanciato ogni volta che parte la shell, e inoltre è pensato per essere installato senza intermediari, per cui durante la procedura di installazione va a scrivere un bel po’ di cose dentro `bashrc`. 
+Bash-it è come un programma che deve essere lanciato ogni volta che parte la shell, e inoltre è pensato per essere installato senza intermediari, per cui durante la procedura di installazione va a scrivere un bel po’ di cose dentro `bashrc`.
 Ma io voglio tenere il `bashrc` libero, quindi ho creato il file `dotfiles/bash/bash-it.bash` che contiene tutta la sbrodolata che bash-it aggiunge di suo al bashrc, e nel bashrc ho aggiunto il source a questo file.
 
 ## Personalizzazione
-Inoltre, bash-it va configurato: alcune cose, come il tema da usare, si configurano direttamente nel file `bash-it.bash` mentre altre, come i plugin o gli autocompletamenti, vanno abilitati o disabilitati, tramite comandi di bash-it stesso, per esempio 
+Inoltre, bash-it va configurato: alcune cose, come il tema da usare, si configurano direttamente nel file `bash-it.bash` mentre altre, come i plugin o gli autocompletamenti, vanno abilitati o disabilitati, tramite comandi di bash-it stesso, per esempio
 
 	bash-it enable completion git
 
@@ -27,6 +27,7 @@ Bisogna aggiornare il submodule tirando giù le ultime modifiche, e poi fare com
 	git add bash/bash-it
 	git ci -m "Update bash/bash-it submodule"
 
+Se l'aggiornamento viene fatto su un mac, poi sull'altro bisogna entrare nella directory del submodule e fare `git pull`.
 
 ## Cose di bash-it abilitate
 A parte quelle di default, che ancora non ho capito bene tutte cosa fanno, ho fatto:
