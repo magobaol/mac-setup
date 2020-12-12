@@ -9,3 +9,7 @@ brew install git
 ```
 
 Bisogna assicurarsi che il path di Homebrew (`/usr/local/bin`) sia [impostato correttamente](/applications/homebrew/#Path).
+
+## Configurazione
+
+In `~/dotilfes/git/.gitconfig`
