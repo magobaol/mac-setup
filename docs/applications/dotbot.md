@@ -20,5 +20,7 @@ Bisogna aggiornare il submodule tirando giù le ultime modifiche, e poi fare com
 	git add .dotbot
 	git ci -m "Update .dotbot submodule"
 
+Se l'aggiornamento viene fatto su un mac, poi sull'altro bisogna entrare nella directory del submodule e fare `git pull`.
+
 [1]:	https://github.com/anishathalye/dotbot
 [2]:	https://github.com/anishathalye/dotbot/blob/master/README.md "README"
