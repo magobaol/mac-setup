@@ -10,10 +10,11 @@
 - [ssh](applications/ssh.md)
 - [dotfiles](dotfiles.md)
 
-## Impostazioni delle applicazioni
+## Impostazioni
 
 - [Google Drive](applications/google-drive.md)
 - [mackup](applications/mackup.md)
+- [macOS defaults](macos-defaults.md)
 
 ## Strumenti essenziali
 
