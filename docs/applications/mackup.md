@@ -29,7 +29,7 @@ Nella cartella `~/.mackup` crea un file `.cfg` con una configurazione come quest
 
 	[application]
 	name = Franz
-	
+
 	[configuration_files]
 	Library/Preferences/io.adlk.franz.plist
 	Library/Application Support/Franz/settings
@@ -61,7 +61,7 @@ Copia tutti i file delle impostazioni delle applicazioni nella directory specifi
 
 Questo va eseguito sul computer su cui si vogliono trasferire le impostazioni
 
-`mackup restore`
+	mackup restore
 
 Elimina i file delle impostazioni e li sostituisce con link simbolici alle cartelle presenti nella directory specificata in `mackup.cfg`
 

@@ -36,7 +36,7 @@
 - DaisyDisk
 - DayOne
 - Ulysses
-- ExactScan Pro
+- [ExactScan Pro](application/exactscan.md)
 - ExifRenamer
 - GoodSync
 - Spotify

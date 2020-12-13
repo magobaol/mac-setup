@@ -5,6 +5,7 @@
 - [bash](bash.md)
 - [dotbot](dotbot.md)
 - [Dropbox](dropbox.md)
+- [ExactScan](exactscan.md)
 - [git](git.md)
 - [Google Drive](google-drive.md)
 - [Homebrew](homebrew.md)
