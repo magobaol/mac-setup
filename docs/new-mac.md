@@ -16,6 +16,14 @@
 - [mackup](applications/mackup.md)
 - [macOS defaults](macos-defaults.md)
 
+## Installazione automatica delle applicazioni
+Prima di scaricare e installare manualmente ogni applicazione, potresti dare un'occhiata a questi strumenti per creare degli script che facciano tutto in automatico
+
+- [Homebrew cask](https://github.com/Homebrew/homebrew-cask)
+- [Mas cli](https://github.com/mas-cli/mas)
+
+e quello che mette tutto insieme, ovvero [Homebrew bundle](https://pumpingco.de/blog/brewfile/).
+
 ## Strumenti essenziali
 
 - [LaunchBar](applications/launchbar.md)
