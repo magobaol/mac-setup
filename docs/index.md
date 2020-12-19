@@ -1,6 +1,7 @@
 # Mac setup
 
-- [Installazione di un computer da zero](new-mac.md)
+- [Installazione di un computer da zero](topics/mac-installation.md)
 - [Tutte le applicazioni](applications/index.md)
-- [mac-automation](mac-automation.md)
-- [Configurazioni per lo sviluppo](dev-config.md)
+- [mac-automation](topics/mac-automation.md)
+- [Configurazioni per lo sviluppo](topics/dev-config.md)
+- [Info su questa documentazione](docs.md)

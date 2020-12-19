@@ -29,12 +29,12 @@ Per molte directory vengono poi creati dei link simbolici tramite `dotbot` (vedi
 
 ## Informazioni specifiche
 
-- [Dotbot](applications/dotbot.md)
-- [Bash](applications/bash.md)
-- [Bash-it](applications/bash-it.md)
-- [Zsh](applications/zsh)
-- [oh-my-zsh](applications/oh-my-zsh.md)
-- [inputrc](applications/inputrc.md)
+- [Dotbot](../applications/dotbot.md)
+- [Bash](../applications/bash.md)
+- [Bash-it](../applications/bash-it.md)
+- [Zsh](../applications/zsh)
+- [oh-my-zsh](../applications/oh-my-zsh.md)
+- [inputrc](../applications/inputrc.md)
 
 ## dotfiles-ae
 [https://bitbucket.org/magobaol/dotfiles-ae/src/master/][4]

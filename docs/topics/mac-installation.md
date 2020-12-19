@@ -2,18 +2,18 @@
 
 ## Primi passi
 
-- [iTerm2](applications/iterm2.md)
-- [Homebrew](applications/homebrew.md)
-- [git](applications/git.md)
-- [1Password](applications/1password.md)
-- [Dropbox](applications/dropbox.md)
-- [ssh](applications/ssh.md)
+- [iTerm2](../applications/iterm2.md)
+- [Homebrew](../applications/homebrew.md)
+- [git](../applications/git.md)
+- [1Password](../applications/1password.md)
+- [Dropbox](../applications/dropbox.md)
+- [ssh](../applications/ssh.md)
 - [dotfiles](dotfiles.md)
 
 ## Impostazioni
 
-- [Google Drive](applications/google-drive.md)
-- [mackup](applications/mackup.md)
+- [Google Drive](../applications/google-drive.md)
+- [mackup](../applications/mackup.md)
 - [macOS defaults](macos-defaults.md)
 
 ## Installazione automatica delle applicazioni
@@ -26,8 +26,8 @@ e quello che mette tutto insieme, ovvero [Homebrew bundle](https://pumpingco.de/
 
 ## Strumenti essenziali
 
-- [LaunchBar](applications/launchbar.md)
-- [BetterSnapTool](applications/better-snap-tool)
+- [LaunchBar](../applications/launchbar.md)
+- [BetterSnapTool](../applications/better-snap-tool)
 - Bartender
 - ClipMenu
 - Popclip
@@ -44,7 +44,7 @@ e quello che mette tutto insieme, ovvero [Homebrew bundle](https://pumpingco.de/
 - DaisyDisk
 - DayOne
 - Ulysses
-- [ExactScan Pro](application/exactscan.md)
+- [ExactScan Pro](../applications/exactscan.md)
 - ExifRenamer
 - GoodSync
 - Spotify
