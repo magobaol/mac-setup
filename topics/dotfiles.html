@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>dotfiles - mac-setup</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "dotfiles";
+    var mkdocs_page_input_path = "topics/dotfiles.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/php.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/rust.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> mac-setup</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="dotfiles.html">dotfiles</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduzione">Introduzione</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installazione">Installazione</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#organizzazione-della-directory-dotfiles">Organizzazione della directory dotfiles</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#informazioni-specifiche">Informazioni specifiche</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dotfiles-ae">dotfiles-ae</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dotfiles-hs">dotfiles-hs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#errori-di-esecuzione-legati-a-bash-it">Errori di esecuzione legati a bash-it</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#programmi-gia-installati">Programmi già installati</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../applications/index.html">Applicazioni</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">mac-setup</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>dotfiles</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/magobaol/mac-setup/edit/master/docs/topics/dotfiles.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="dotfiles">dotfiles</h1>
+<p><a href="https://github.com/magobaol/dotfiles">https://github.com/magobaol/dotfiles</a></p>
+<h2 id="introduzione">Introduzione</h2>
+<p>I dotfiles sono organizzati nel repo per essere facilmente trasportati e installati ovunque. Per installarli uso <code>dotbot</code>, quindi alcune delle scelte sono state fatte per semplificare l'installazione usando questo programma, ma di norma si tratta di scelte che andrebbero bene comunque.</p>
+<h2 id="installazione">Installazione</h2>
+<p>(nella home)</p>
+<pre><code class="bash">git clone git@github.com:magobaol/dotfiles.git
+</code></pre>
+
+<pre><code>cd dotfiles
+./install
+</code></pre>
+<h2 id="organizzazione-della-directory-dotfiles">Organizzazione della directory dotfiles</h2>
+<p>Nella directory <code>dotfiles</code> viene utilizzata questa struttura:</p>
+<ul>
+<li>Tutti i file che sarebbero dei <em>dotfiles</em> nella home vanno direttamente nella root del repository, ma il nome è senza il punto (es: <code>.bash_profile_</code> si chiama <code>bash_profile</code>)</li>
+<li>Ci sono poi delle directory:<ul>
+<li><code>bash</code>: contiene cose specifiche da usare con la shell bash</li>
+<li><code>zsh</code>: contiene cose specifiche da usare con la shell zsh</li>
+<li><code>shell</code>: contiene cose valide per tutte le shell (es: alias)</li>
+</ul>
+</li>
+</ul>
+<p>Sia queste che altre scelte sono ispirate all’organizzazione dei file di Anish Athalye <a href="">https://github.com/anishathalye/dotfiles</a> anche grazie al suo articolo <a href="">http://www.anishathalye.com/2014/08/03/managing-your-dotfiles/</a></p>
+<p>Per molte directory vengono poi creati dei link simbolici tramite <code>dotbot</code> (vedi dopo) per avere un riferimento semplice e costante da ovunque sia necessario accedervi (per esempio la cartella <code>bash</code> viene symlinkata da <code>~/.bash</code>.</p>
+<h2 id="informazioni-specifiche">Informazioni specifiche</h2>
+<ul>
+<li><a href="/applications/dotbot.md">Dotbot</a></li>
+<li><a href="/applications/bash.md">Bash</a></li>
+<li><a href="/applications/bash-it.md">Bash-it</a></li>
+<li><a href="/applications/zsh">Zsh</a></li>
+<li><a href="/applications/oh-my-zsh.md">oh-my-zsh</a></li>
+<li><a href="/applications/inputrc.md">inputrc</a></li>
+</ul>
+<h2 id="dotfiles-ae">dotfiles-ae</h2>
+<p><a href="https://bitbucket.org/magobaol/dotfiles-ae/src/master/">https://bitbucket.org/magobaol/dotfiles-ae/src/master/</a></p>
+<p>Contiene cose specifiche per AE. È su BitBucket perché all'epoca era l'unico modo per farlo privato.
+Nei <code>bashrc</code> e <code>zshrc</code> del repo dotfiles principale ci sono le inclusioni dei corrispondenti "rc" di questo repo, solo se esistono, così i dotfiles principali sono portabili anche se questo secondario.</p>
+<h2 id="dotfiles-hs">dotfiles-hs</h2>
+<p><a href="https://bitbucket.org/magobaol/dotfiles-hs/src/master/">https://bitbucket.org/magobaol/dotfiles-hs/src/master/</a></p>
+<p>Contiene cose specifiche per HS. È su BitBucket perché all'epoca era l'unico modo per farlo privato.
+Nei <code>bashrc</code> e <code>zshrc</code> del repo dotfiles principale ci sono le inclusioni dei corrispondenti "rc" di questo repo, solo se esistono, così i dotfiles principali sono portabili anche se questo secondario.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="errori-di-esecuzione-legati-a-bash-it">Errori di esecuzione legati a bash-it</h3>
+<p>A volte può capitare che la procedura dia errore quando cerca di eseguire i comandi per personalizzare bash-it: in molti casi il problema è legato alla versione di bash che si sta usando. <br />
+Nello script dotbot viene installata la versione più aggiornata di bash, quindi di solito è sufficiente eseguire l'installazione una seconda volta volta, ma a volte può essere necessario chiudere tutte le finestre di iTerm e riprovare.</p>
+<h3 id="programmi-gia-installati">Programmi già installati</h3>
+<p>Se sul computer sono già installati i vari programmi che dotbot cerca di installare, si riceveranno dei warning o degli error da Brew: per aggiornarli è sufficiente seguire le istruzioni.
+Non vale la pena tentare di evitare questi errori, visto che di solito sono innocui.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../applications/index.html" class="btn btn-neutral float-right" title="Applicazioni">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/magobaol/mac-setup/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../applications/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>mackup - mac-setup</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "mackup";
+    var mkdocs_page_input_path = "applications/mackup.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/php.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/rust.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> mac-setup</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../topics/dotfiles.html">dotfiles</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="index.html">Applicazioni</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">mac-setup</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>mackup</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/magobaol/mac-setup/edit/master/docs/applications/mackup.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="mackup">mackup</h1>
+<p><a href="https://github.com/lra/mackup">https://github.com/lra/mackup</a></p>
+<p>Mackup è una piccola applicazione che consente di sincronizzare le preferenze di diverse applicazioni tra più mac, usando Dropbox o Google Drive.</p>
+<h2 id="installazione">Installazione</h2>
+<p>Normalmente lo installo con i miei dotfiles tramite dotbot.</p>
+<p>Per installazione manuale
+    brew install mackup</p>
+<h2 id="configurazione">Configurazione</h2>
+<p>Visto che è un’applicazione base per il mio setup, ho deciso che la configurazione stessa di <strong>mackup</strong> deve essere salvata con i miei dotfiles, mentre poi le preferenze delle applicazioni che <strong>mackup</strong> tiene sincronizzate sono nella cartella cloud scelta (Dropbox o Google Drive)
+La configurazione di <strong>mackup</strong> si trova quindi in <code>dotfiles/mackup</code></p>
+<p>Poiché <strong>mackup</strong> di base sincronizza anche i dotfiles di diverse applicazioni che io invece preferisco tenere nel mio repo dotfiles, ho escluso le applicazioni in questioni nel file di configurazione di <strong>mackup</strong> che si trova in <code>dotfiles/mackup/.mackup.cfg</code> (e ho escluso la stessa <strong>mackup</strong> visto che la sua configurazione la salvo nei dotfiles)</p>
+<p>Ho escluso poi alcune altre applicazioni perché non mi interessa sincronizzarle sul computer di lavoro e/o tirano dentro troppi file (tipo Scrivener, che sincronizza tutti i backup).</p>
+<p>Per avere la lista delle applicazioni supportate da mackup (devi usare il nome esatto per escluderle)</p>
+<pre><code>mackup list
+</code></pre>
+<p>Se stai passando da un tuo computer vecchio a uno nuovo, tuttavia, può valere la pena dare attivare la sincronizzazione anche delle applicazioni escluse, per essere certo di avere tutto.
+Oppure puoi scrivere delle personalizzazioni di configurazione per applicazioni non supportate (o che vuoi supportare in maniera differente).</p>
+<h2 id="sincronizzazioni-personalizzate">Sincronizzazioni personalizzate</h2>
+<p>Nella cartella <code>~/.mackup</code> crea un file <code>.cfg</code> con una configurazione come questa</p>
+<pre><code>[application]
+name = Franz
+
+[configuration_files]
+Library/Preferences/io.adlk.franz.plist
+Library/Application Support/Franz/settings
+Library/Applocation Support/Preferences
+</code></pre>
+<h2 id="suggerimenti">Suggerimenti</h2>
+<ul>
+<li>
+<p>Ha senso eseguire il restore di mackup su un nuovo computer anche prima di installare le applicazioni (anzi, forse è persino meglio) perché comunque le applicazioni andranno a cercare le informazioni e le troveranno.</p>
+</li>
+<li>
+<p>Se le applicazioni sono già installate, meglio chiuderle prima di fare il restore.</p>
+</li>
+<li>
+<p>Alcune applicazioni potrebbero non vedere i nuovi file anche se erano chiuse: prova a riavviare il computer.</p>
+</li>
+<li>
+<p>Non è possibile fare il backup o il restore di una singola applicazione (per esempio se vuoi aggiungerne una che non c'era la prima volta che hai eseguito il comdando). Mackup è abbastanza intelligente da verificare cosa esiste e chiedere se vuoi sovrascrivere il file oppure no, ma visto che alla fine si tratta solo di creare link simbolici, forse fai prima a farlo a mano.</p>
+</li>
+<li>
+<p>Alcune applicazioni non supportano le configurazioni tramite i link simbolici (probablimente OF è una di queste) e quindi c'è poco da fare, bisogna copiare le cose a mano.</p>
+</li>
+<li>
+<p>Alcune applicazioni cambiano la posizione dei file di configurazione quando cambiano versione (per esempio IntelliJ IDEA) quindi è necessario creare dei nuovi link simbolici ogni volta.</p>
+</li>
+</ul>
+<h2 id="eseguire-il-backup">Eseguire il backup</h2>
+<p>Questo di norma va fatto sul computer su cui sono presenti le impostazioni più aggiornate.</p>
+<pre><code>mackup backup
+</code></pre>
+<p>Copia tutti i file delle impostazioni delle applicazioni nella directory specificata in <code>mackup.cfg</code> e crea i link simbolici a quelle directory/file.</p>
+<h2 id="eseguire-il-restore">Eseguire il restore</h2>
+<p>Questo va eseguito sul computer su cui si vogliono trasferire le impostazioni</p>
+<pre><code>mackup restore
+</code></pre>
+<p>Elimina i file delle impostazioni e li sostituisce con link simbolici alle cartelle presenti nella directory specificata in <code>mackup.cfg</code></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/magobaol/mac-setup/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

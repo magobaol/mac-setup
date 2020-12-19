@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>bash - mac-setup</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "bash";
+    var mkdocs_page_input_path = "applications/bash.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/php.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/rust.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> mac-setup</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../topics/dotfiles.html">dotfiles</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="index.html">Applicazioni</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">mac-setup</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>bash</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/magobaol/mac-setup/edit/master/docs/applications/bash.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="bash">bash</h1>
+<p><a href="https://www.gnu.org/software/bash/">https://www.gnu.org/software/bash/</a></p>
+<h2 id="installazione">Installazione</h2>
+<p>Bash è installata di default su macOS, ma di solito è una versione molto vecchia che Apple non aggiorna, quindi è necessario installarla versione più aggiornata tramite brew.</p>
+<pre><code>brew install bash
+</code></pre>
+<p>Normalmente la installo con i miei dotfiles tramite dotbot.</p>
+<h2 id="impostare-bash-come-shell-di-default">Impostare bash come shell di default</h2>
+<p>Nei miei dotfiles c'è un alias che consente di farlo</p>
+<pre><code>to_bash
+</code></pre>
+<p>che esegue questo comando</p>
+<pre><code>chsh -s /usr/local/bin/bash
+</code></pre>
+<p>La shell deve essere preventivamente stata aggiunta alle shell di sistema, in <code>/etc/shells</code>. Anche questa operazione viene eseguita in dotbot.</p>
+<p>Notare che la cartella è <code>/usr/local/bin/bash</code>, ovvero quella di Brew, non quella di macOS.</p>
+<p>Rif: <a href="https://dev.to/emcain/how-to-change-bash-versions-on-mac-with-homebrew-20o3">How to change bash versions on Mac with Homebrew - DEV</a></p>
+<h2 id="bashrc-vs-bash_profile">bashrc vs bash_profile</h2>
+<blockquote>
+<p>bash_profile is executed for login shells, while .bashrc is executed for interactive non-login shells._</p>
+</blockquote>
+<p>Rif: <a href="https://medium.com/@kingnand.90/what-is-the-difference-between-bash-profile-and-bashrc-d4c902ac7308#">https://medium.com/@kingnand.90/what-is-the-difference-between-bash-profile-and-bashrc-d4c902ac7308#</a></p>
+<p>Rif: <a href="https://joshstaiger.org/archives/2005/07/bash_profile_vs.html">https://joshstaiger.org/archives/2005/07/bash_profile_vs.html</a></p>
+<p>Di base, per avere sempre le stesse cose da tutte le parti, <code>bash_profile</code> include <code>bashrc</code>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/magobaol/mac-setup/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
