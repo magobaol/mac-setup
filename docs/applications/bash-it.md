@@ -17,6 +17,8 @@ Inoltre, bash-it va configurato: alcune cose, come il tema da usare, si configur
 
 che va a creare un symlink dentro una cartella interna a bash-it; poiché la procedura di installazione dei miei dotfiles deve essere automatica, nel file `install.conf.yaml` di dotbot ho inserito dei comandi shell che abilitano le cose che voglio abilitare.
 
+Le personalizzazioni sono definite in `dotfiles/bash/bash-it-setup.sh` e questo file viene richiamato durante l'installazione di [dotbot](/applications/dotbot). In precedenza le singole righe di quel file venivano chiamate in `dobtbot`, ma in questo modo è possibile eseguire l'installazione di dotbot anche in ambiente zsh.
+
 ## Aggiornamento di bash-it
 Bisogna aggiornare il submodule tirando giù le ultime modifiche, e poi fare commit del repo dotfiles principale
 
