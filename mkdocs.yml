@@ -1,4 +1,5 @@
 site_name: mac-setup
+use_directory_urls: false
 nav:
   - Home: index.md
   - dotfiles: dotfiles.md
