@@ -27,7 +27,7 @@ e quello che mette tutto insieme, ovvero [Homebrew bundle](https://pumpingco.de/
 ## Strumenti essenziali
 
 - [LaunchBar](../applications/launchbar.md)
-- [BetterSnapTool](../applications/better-snap-tool)
+- [BetterSnapTool](../applications/better-snap-tool.md)
 - Bartender
 - ClipMenu
 - Popclip

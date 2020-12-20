@@ -11,6 +11,7 @@
 - [Homebrew](homebrew.md)
 - [.inputrc](inputrc.md)
 - [iTerm2](iterm2.md)
+- [LaunchBar](launchbar.md)
 - [mackup](mackup.md)
 - [mkdocs](mkdocs.md)
 - [oh-my-zsh](oh-my-zsh.md)
