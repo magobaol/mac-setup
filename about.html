@@ -62,6 +62,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#blocchi-note">Blocchi note</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aggiornamento-documentazione">Aggiornamento documentazione</a>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -219,6 +221,9 @@ Quindi con l'uso di un hook di pre-commit (<code>hooks/pre-commit-hooks/00-gener
 <p class="admonition-title">Error</p>
 <p>Questo è un blocco rosso, di errore. Non so se in questo caso il titolo può essere personalizzato.</p>
 </div>
+<h2 id="aggiornamento-documentazione">Aggiornamento documentazione</h2>
+<p>La documentazione può essere aggiornata in due modi: agendo sui file locali, e poi facendo i normali commit e push per versionare tutto e, volendo mandarla su GH Pages, facendo <code>mkserve gh-deploy</code>, oppure modificando le pagine direttamente su Github, seguendo il link presente <em>Edit on Github</em> presente in ogni pagina: in questo secondo caso, bisogna poi fare un <code>git pull</code> in locale se si vuole tenere tutto in sync.
+Se si modifica direttamente su Github, però, il deploy su GH Pages non è automatico, quindi probabilmente non ne vale la pena.</p>
               
             </div>
           </div>
