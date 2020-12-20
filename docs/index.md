@@ -4,4 +4,4 @@
 - [Tutte le applicazioni](applications/index.md)
 - [mac-automation](topics/mac-automation.md)
 - [Configurazioni per lo sviluppo](topics/dev-config.md)
-- [Info su questa documentazione](docs.md)
+- [Info su questa documentazione](about.md)
