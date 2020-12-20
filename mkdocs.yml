@@ -6,7 +6,9 @@ theme:
   highlightjs: true
   hljs_languages:
     - php
-    - rust
+    - yaml
+markdown_extensions:
+  - admonition    
 nav:
   - Argomenti:
     - topics/mac-installation.md

@@ -12,6 +12,7 @@
 - [.inputrc](inputrc.md)
 - [iTerm2](iterm2.md)
 - [mackup](mackup.md)
+- [mkdocs](mkdocs.md)
 - [oh-my-zsh](oh-my-zsh.md)
 - [Spotify CLI](spotify-cli.md)
 - [ssh](ssh.md)
