@@ -78,3 +78,6 @@ I blocchi disponibili, per quanto ho potuto scoprire, sono:
 
 !!!error
     Questo è un blocco rosso, di errore. Non so se in questo caso il titolo può essere personalizzato.
+    
+## Aggiornamento documentazione
+La documentazione può essere aggiornata in due modi: agendo sui file locali, e poi facendo i normali commit e push per versionare tutto e, volendo mandarla su GH Pages, facendo `mkserve gh-deploy`, oppure modificando le pagine direttamente su Github, seguendo il link presente *Edit on Github* presente in ogni pagina: in questo secondo caso, bisogna poi fare un `git pull` in locale se si vuole tenere tutto in sync.
