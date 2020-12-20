@@ -11,3 +11,8 @@ Altri riferimenti utili:
 - [https://macos-defaults.com/](https://macos-defaults.com/) – Una collezione di macOS defaults con esempi visuali di ciò che vanno a cambiare
 
 - [https://github.com/kevinSuttle/macOS-Defaults/blob/master/REFERENCE.md](https://github.com/kevinSuttle/macOS-Defaults/blob/master/REFERENCE.md) – Documentazione sui vari modi per agire sulle impostazioni del mac e delle applicazioni.
+
+## Configurazioni da fare a mano
+
+- Shortcut per switchare tra finestre della stessa applicazione (CMD+\):  
+`System Preferences -> Keyboard -> Shortcuts -> Keyboard -> Move focus to next window`
