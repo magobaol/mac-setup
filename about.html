@@ -49,10 +49,22 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a>
+                    </li>
+                </ul>
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="about.html">About</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#navigazione-in-locale">Navigazione in locale</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#deploy-su-internet">Deploy su internet</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#server-personale">Server personale</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#github-pages">Github pages</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#indice-delle-applicazioni">Indice delle applicazioni</a>
     </li>
@@ -63,6 +75,12 @@
     <li class="toctree-l2"><a class="reference internal" href="#blocchi-note">Blocchi note</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#aggiornamento-documentazione">Aggiornamento documentazione</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#aggiornamento-da-locale">Aggiornamento da locale</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#aggiornamento-da-gh-pages">Aggiornamento da GH Pages</a>
+    </li>
+        </ul>
     </li>
     </ul>
                     </li>
@@ -105,6 +123,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="applications/inputrc.html">.inputrc</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="applications/iterm2.html">iTerm2</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="applications/launchbar.html">LaunchBar</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="applications/mackup.html">mackup</a>
                     </li>
@@ -165,7 +185,7 @@ Tool per creare blog statici come Jekyll non mi sembravano la soluzione migliore
 <li>Che la documentazione generata avesse un aspetto gradevole</li>
 </ul>
 <p>I candidati sono stati <a href="https://docsify.js.org/">Docsify</a> e <a href="https://www.mkdocs.org/">MkDocs</a> e alla fine ha vinto quest'ultimo.<br />
-Le informazioni generali sono su <a href="applications/mkdocs.html">mlkdocs</a>, mentre qui di seguito ci sono le configurazioni che ho usato per questo progetto.</p>
+Le informazioni generali sono su <a href="applications/mkdocs.html">mkdocs</a>, mentre qui di seguito ci sono le configurazioni che ho usato per questo progetto.</p>
 <h2 id="navigazione-in-locale">Navigazione in locale</h2>
 <p>MkDocs di default serve ogni pagina come se fosse una directory, per cui per esempio <code>http://localhost:8000/applications/1password/</code> ma questo rendeva la documentazione non navigabile aprendo i file da file system in un browser. 
 Impostando il parametro </p>
@@ -177,15 +197,26 @@ Impostando il parametro </p>
 <p class="admonition-title">Nota</p>
 <p>il plugin Gesturify di Chrome non funziona sui file locali, e quindi la navigazione è leggermente meno piacevole, ma non ci posso fare niente.</p>
 </div>
+<p>Per avere la documentazione aggiornata in locale è necessario fare un <code>mkdocs build</code>, che ricrea il contenuto della cartella <code>site</code>, che è poi quello che vado ad aprire localmente. È un passaggio in più che probabilmente con Docsify non sarebbe stato necessario, ma gli altri  vantaggi di MkDocs mi hanno comunque fatto accettare il compromesso. Ed è comunque probabile che se mi metto a scrivere della documentazione faccio partire il server di MkDocs per verificare quello che sto scrivendo, quindi la build è fatta comunque.</p>
+<h2 id="deploy-su-internet">Deploy su internet</h2>
+<p>Mi piace l'idea di poter raggiungere questa documentazione facilmente anche se non ho a disposizione il mio computer. Ovviamente, essendo tutto in un repo Github, è abbastanza semplice, anche perché Github renderizza automaticamente i file markdown e consente persino la navigazione dei link, quindi in teoria mi potrei accontentare.<br />
+Però volevo qualcosa di più, volevo proprio la documentazione generata raggiungibile, quindi ho seguito alcune possibilità.</p>
+<h3 id="server-personale">Server personale</h3>
+<p>La prima è stata quella di pubblicare tutto su www.francescoface.it/mac-setup, con l'idea di proteggere la documentazione da password, ma questo ultimo passaggio non è semplice. Potrei usare un <code>.htaccess</code> ma il browser non salva la password, quindi dovrei inserirla di continuo.
+Ci sarebbero delle alternative, ma prevedono tutte configurazioni e lavoro che non ho davvero voglia di fare.</p>
+<p>Comunque, facendo i test, ho creato lo script <code>bin/build-sync.sh</code> che esegue il build del sito e poi fa un rsync della cartella sul server. Lo lascio per riferimenti futuri, anche se non credo che lo userò più.</p>
+<h3 id="github-pages">Github pages</h3>
+<p>Visto che non posso proteggere da password il tutto, tanto valeva provare a usare GH Pages (che non è possibile proteggere da password, neanche se il repo è privato), che è persino supportato direttamente da MkDocs.</p>
+<p>Con il comando <code>mkdocs gh-deploy</code> MkDocs fa la build del sito e la carica su un branch chiamato <code>gh-pages</code> all'interno dello stesso repo. Nei settings del repo su Github gli si dice che il branch per le Pages è quello e il gioco è fatto. Davvero troppo semplice per andare a cercare altre soluzioni.</p>
 <h2 id="indice-delle-applicazioni">Indice delle applicazioni</h2>
 <p>Mi piaceva l'idea che potessi aggiungere la documentazione di un'applicazione semplicemente creando un nuovo file, senza dover agire su altre parti della documentazione per creare un link.
 Quindi con l'uso di un hook di pre-commit (<code>hooks/pre-commit-hooks/00-generate-applications-index</code>) e un piccolo script bash (<code>bin/create-applications-index.sh</code>) sono riuscito a farlo.</p>
 <div class="admonition nota">
 <p class="admonition-title">Nota</p>
-<p>Gli hook di Git sono salvati nella directory <code>hooks</code> in modo da poter essere versionati e distribuiti nello stesso repo in cui sono utilizzati, ma per fare in modo che Git li usi effettivamente nel repo, vanno "installati", e questo viene fatto tramite <code>bin/install-git-hooks.sh</code></p>
+<p>Gli hook di Git sono salvati nella directory <code>hooks</code> in modo da poter essere versionati e distribuiti nello stesso repo in cui sono utilizzati, ma per fare in modo che Git li usi effettivamente nel repo vanno "installati", e questo viene fatto tramite <code>bin/install-git-hooks.sh</code></p>
 </div>
 <h2 id="navbar">Navbar</h2>
-<p>Mi piaceva avere l'elenco di tutte le applicazioni direttamente nella navbar, e se avessi omesso completamente la sezione <code>nav</code> nel file <code>mkdocs.yml</code> lui avrebbe fatto tutto da solo, però avrebbe messo tutto in ordine alfabetico e io volevo avere il controllo almeno della sezione topics.  </p>
+<p>Mi piaceva avere l'elenco di tutte le applicazioni direttamente nella navbar, e se avessi omesso completamente la sezione <code>nav</code> nel file <code>mkdocs.yml</code> MkDocs avrebbe fatto tutto da solo, però avrebbe messo tutto in ordine alfabetico e io volevo avere il controllo almeno della sezione topics.  </p>
 <p>Avevo pensato di creare qualche automazione come quella fatta per creare la pagina indice delle applicazioni, ma poi ho visto che mkdocs, durante la build, elenca le pagine che sono presenti in una directory e non sono invece presenti nella navbar, quindi ho pensato che non valeva la pena sbattersi a creare un'automazione quando mi basta fare un check e un veloce copia/incolla quando aggiungo un'applicazione.</p>
 <div class="admonition nota">
 <p class="admonition-title">Nota</p>
@@ -222,8 +253,18 @@ Quindi con l'uso di un hook di pre-commit (<code>hooks/pre-commit-hooks/00-gener
 <p>Questo è un blocco rosso, di errore. Non so se in questo caso il titolo può essere personalizzato.</p>
 </div>
 <h2 id="aggiornamento-documentazione">Aggiornamento documentazione</h2>
-<p>La documentazione può essere aggiornata in due modi: agendo sui file locali, e poi facendo i normali commit e push per versionare tutto e, volendo mandarla su GH Pages, facendo <code>mkserve gh-deploy</code>, oppure modificando le pagine direttamente su Github, seguendo il link presente <em>Edit on Github</em> presente in ogni pagina: in questo secondo caso, bisogna poi fare un <code>git pull</code> in locale se si vuole tenere tutto in sync.
-Se si modifica direttamente su Github, però, il deploy su GH Pages non è automatico, quindi probabilmente non ne vale la pena.</p>
+<p>La documentazione può essere aggiornata in due modi: agendo sui file locali oppure modificando il repo direttamente su Gitbub.</p>
+<h3 id="aggiornamento-da-locale">Aggiornamento da locale</h3>
+<p>Modificare i file e magari lanciare il server di MkDocs per verificare che il tutto sia a posto è probabilmente la cosa più semplice.
+Poi facendo i normali commit e push per versionare tutto e, volendo mandarla su GH Pages, facendo <code>mkserve gh-deploy</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Per modificare i file in locale è opportuno utilizzare il più semplice editor di testo possibile. Meglio evitare Bear (che comunque non può lavorare su filesystem) o anche Ulysses, perché usa delle convenzioni markdown (per esempio mette i link come note in fondo alla pagina) che non mi convincono del tutto.
+La cosa migliore che è trovato è stato VSCode, persino senza preview integrata, perché tanto uso il server di mkdocs.</p>
+</div>
+<h3 id="aggiornamento-da-gh-pages">Aggiornamento da GH Pages</h3>
+<p>Le pagine possono essere modificate anche direttamente su Github, seguendo il link <strong>Edit on Github</strong> presente in ogni pagina: in questo secondo caso, bisogna poi fare un <code>git pull</code> in locale se si vuole tenere tutto in sync.<br />
+Se si modifica direttamente su Github, inoltre, il deploy su GH Pages non è automatico, quindi probabilmente non vale la pena usare questo metodo.</p>
               
             </div>
           </div>
@@ -233,6 +274,8 @@ Se si modifica direttamente su Github, però, il deploy su GH Pages non è autom
       
         <a href="topics/mac-installation.html" class="btn btn-neutral float-right" title="Installazione di un computer da zero">Next <span class="icon icon-circle-arrow-right"></span></a>
       
+      
+        <a href="index.html" class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -259,6 +302,8 @@ Se si modifica direttamente su Github, però, il deploy su GH Pages non è autom
       
           <a href="https://github.com/magobaol/mac-setup/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
+      
+        <span><a href="index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="topics/mac-installation.html" style="color: #fcfcfc">Next &raquo;</a></span>
