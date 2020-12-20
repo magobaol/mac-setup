@@ -11,7 +11,7 @@ I requisiti del tool erano:
 - Che la documentazione generata avesse un aspetto gradevole
 
 I candidati sono stati [Docsify](https://docsify.js.org/) e [MkDocs](https://www.mkdocs.org/) e alla fine ha vinto quest'ultimo.  
-Le informazioni generali sono su [mlkdocs](applications/mkdocs.md), mentre qui di seguito ci sono le configurazioni che ho usato per questo progetto.
+Le informazioni generali sono su [mkdocs](applications/mkdocs.md), mentre qui di seguito ci sono le configurazioni che ho usato per questo progetto.
 
 ## Navigazione in locale
 
@@ -28,16 +28,34 @@ la URL diventa `http://localhost:8000/applications/1password.html` e quindi da f
 
     il plugin Gesturify di Chrome non funziona sui file locali, e quindi la navigazione è leggermente meno piacevole, ma non ci posso fare niente.
 
+Per avere la documentazione aggiornata in locale è necessario fare un `mkdocs build`, che ricrea il contenuto della cartella `site`, che è poi quello che vado ad aprire localmente. È un passaggio in più che probabilmente con Docsify non sarebbe stato necessario, ma gli altri  vantaggi di MkDocs mi hanno comunque fatto accettare il compromesso. Ed è comunque probabile che se mi metto a scrivere della documentazione faccio partire il server di MkDocs per verificare quello che sto scrivendo, quindi la build è fatta comunque.
+
+## Deploy su internet
+
+Mi piace l'idea di poter raggiungere questa documentazione facilmente anche se non ho a disposizione il mio computer. Ovviamente, essendo tutto in un repo Github, è abbastanza semplice, anche perché Github renderizza automaticamente i file markdown e consente persino la navigazione dei link, quindi in teoria mi potrei accontentare.  
+Però volevo qualcosa di più, volevo proprio la documentazione generata raggiungibile, quindi ho seguito alcune possibilità.
+
+### Server personale
+La prima è stata quella di pubblicare tutto su www.francescoface.it/mac-setup, con l'idea di proteggere la documentazione da password, ma questo ultimo passaggio non è semplice. Potrei usare un `.htaccess` ma il browser non salva la password, quindi dovrei inserirla di continuo.
+Ci sarebbero delle alternative, ma prevedono tutte configurazioni e lavoro che non ho davvero voglia di fare.
+
+Comunque, facendo i test, ho creato lo script `bin/build-sync.sh` che esegue il build del sito e poi fa un rsync della cartella sul server. Lo lascio per riferimenti futuri, anche se non credo che lo userò più.
+
+### Github pages
+Visto che non posso proteggere da password il tutto, tanto valeva provare a usare GH Pages (che non è possibile proteggere da password, neanche se il repo è privato), che è persino supportato direttamente da MkDocs.
+
+Con il comando `mkdocs gh-deploy` MkDocs fa la build del sito e la carica su un branch chiamato `gh-pages` all'interno dello stesso repo. Nei settings del repo su Github gli si dice che il branch per le Pages è quello e il gioco è fatto. Davvero troppo semplice per andare a cercare altre soluzioni.
+
 ## Indice delle applicazioni
 Mi piaceva l'idea che potessi aggiungere la documentazione di un'applicazione semplicemente creando un nuovo file, senza dover agire su altre parti della documentazione per creare un link.
 Quindi con l'uso di un hook di pre-commit (`hooks/pre-commit-hooks/00-generate-applications-index`) e un piccolo script bash (`bin/create-applications-index.sh`) sono riuscito a farlo.
 
 !!!Nota
 
-    Gli hook di Git sono salvati nella directory `hooks` in modo da poter essere versionati e distribuiti nello stesso repo in cui sono utilizzati, ma per fare in modo che Git li usi effettivamente nel repo, vanno "installati", e questo viene fatto tramite `bin/install-git-hooks.sh`
+    Gli hook di Git sono salvati nella directory `hooks` in modo da poter essere versionati e distribuiti nello stesso repo in cui sono utilizzati, ma per fare in modo che Git li usi effettivamente nel repo vanno "installati", e questo viene fatto tramite `bin/install-git-hooks.sh`
 
 ## Navbar
-Mi piaceva avere l'elenco di tutte le applicazioni direttamente nella navbar, e se avessi omesso completamente la sezione `nav` nel file `mkdocs.yml` lui avrebbe fatto tutto da solo, però avrebbe messo tutto in ordine alfabetico e io volevo avere il controllo almeno della sezione topics.  
+Mi piaceva avere l'elenco di tutte le applicazioni direttamente nella navbar, e se avessi omesso completamente la sezione `nav` nel file `mkdocs.yml` MkDocs avrebbe fatto tutto da solo, però avrebbe messo tutto in ordine alfabetico e io volevo avere il controllo almeno della sezione topics.  
 
 Avevo pensato di creare qualche automazione come quella fatta per creare la pagina indice delle applicazioni, ma poi ho visto che mkdocs, durante la build, elenca le pagine che sono presenti in una directory e non sono invece presenti nella navbar, quindi ho pensato che non valeva la pena sbattersi a creare un'automazione quando mi basta fare un check e un veloce copia/incolla quando aggiungo un'applicazione.
 
@@ -80,4 +98,16 @@ I blocchi disponibili, per quanto ho potuto scoprire, sono:
     Questo è un blocco rosso, di errore. Non so se in questo caso il titolo può essere personalizzato.
     
 ## Aggiornamento documentazione
-La documentazione può essere aggiornata in due modi: agendo sui file locali, e poi facendo i normali commit e push per versionare tutto e, volendo mandarla su GH Pages, facendo `mkserve gh-deploy`, oppure modificando le pagine direttamente su Github, seguendo il link presente *Edit on Github* presente in ogni pagina: in questo secondo caso, bisogna poi fare un `git pull` in locale se si vuole tenere tutto in sync.
+La documentazione può essere aggiornata in due modi: agendo sui file locali oppure modificando il repo direttamente su Gitbub.
+
+### Aggiornamento da locale
+Modificare i file e magari lanciare il server di MkDocs per verificare che il tutto sia a posto è probabilmente la cosa più semplice.
+Poi facendo i normali commit e push per versionare tutto e, volendo mandarla su GH Pages, facendo `mkserve gh-deploy`.
+
+!!!warning
+    Per modificare i file in locale è opportuno utilizzare il più semplice editor di testo possibile. Meglio evitare Bear (che comunque non può lavorare su filesystem) o anche Ulysses, perché usa delle convenzioni markdown (per esempio mette i link come note in fondo alla pagina) che non mi convincono del tutto.
+    La cosa migliore che è trovato è stato VSCode, persino senza preview integrata, perché tanto uso il server di mkdocs.
+
+### Aggiornamento da GH Pages
+Le pagine possono essere modificate anche direttamente su Github, seguendo il link **Edit on Github** presente in ogni pagina: in questo secondo caso, bisogna poi fare un `git pull` in locale se si vuole tenere tutto in sync.  
+Se si modifica direttamente su Github, inoltre, il deploy su GH Pages non è automatico, quindi probabilmente non vale la pena usare questo metodo.
