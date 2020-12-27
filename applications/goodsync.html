@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Dropbox - mac-setup</title>
+  <title>GoodSync - mac-setup</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Dropbox";
-    var mkdocs_page_input_path = "applications/dropbox.md";
+    var mkdocs_page_name = "GoodSync";
+    var mkdocs_page_input_path = "applications/goodsync.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -82,17 +82,29 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="dotbot.html">dotbot</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="dropbox.html">Dropbox</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#installazione">Installazione</a>
-    </li>
-    </ul>
+                    <li class="toctree-l1"><a class="reference internal" href="dropbox.html">Dropbox</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="exactscan.html">ExactScan</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="git.html">git</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="goodsync.html">GoodSync</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="goodsync.html">GoodSync</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#esecuzione-automatica">Esecuzione automatica</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#a-orari-prestabiliti">A orari prestabiliti</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ogni-tot-minutiore">Ogni tot minuti/ore</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#prevent-sleep">Prevent sleep</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#salvataggio-log">Salvataggio log</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#invio-log-tramite-email">Invio log tramite email</a>
+    </li>
+    </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="google-drive.html">Google Drive</a>
                     </li>
@@ -142,10 +154,10 @@
         
       
     
-    <li>Dropbox</li>
+    <li>GoodSync</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/magobaol/mac-setup/edit/master/docs/applications/dropbox.md"
+        <a href="https://github.com/magobaol/mac-setup/edit/master/docs/applications/goodsync.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -156,11 +168,22 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="dropbox">Dropbox</h1>
-<p><a href="https://www.dropbox.com/">https://www.dropbox.com/</a></p>
-<h2 id="installazione">Installazione</h2>
-<p>Scaricare da <a href="https://www.dropbox.com/install">https://www.dropbox.com/install</a>
-Visti i nuovi limiti (max 3 dispositivi) se non è necessario sincronizzare tutti i file sul computer che si sta installando, è sufficiente prendere la cartella <code>ssh-key</code></p>
+                <h1 id="goodsync">GoodSync</h1>
+<p><a href="https://www.goodsync.com/">https://www.goodsync.com/</a></p>
+<h2 id="esecuzione-automatica">Esecuzione automatica</h2>
+<h3 id="a-orari-prestabiliti">A orari prestabiliti</h3>
+<p>Lo scheduling a orario prestabiliti non è in grado di svegliare il computer, ma può solo impedirgli di andare in sleep nel caso in cui ci siano Job da eseguire (se impostato in <code>Preferences-&gt;General-&gt;System integration</code>). Quindi anche per un Job da eseguire una volta al giorno probabilmente impedirebbe al computer di andare in sleep per tutto il giorno.
+E se invece mandi in sleep il computer forzatamente, il Job non parte, neanche quando il computer torna su. Insomma, un po' una delusione.</p>
+<h3 id="ogni-tot-minutiore">Ogni tot minuti/ore</h3>
+<p>In questo caso, se nel momento in cui il job sarebbe dovuto partire il computer è in sleep, il job parte non appena il computer si risveglia.</p>
+<h3 id="prevent-sleep">Prevent sleep</h3>
+<p>Fatti un po' di test con <code>Preferences-&gt;General-&gt;System integration</code>, il risultato è questo: se il JOB è in esecuzione, il computer non va in sleep (magari si spegne lo schermo e si blocca, ma non è in sleep).
+Stessa cosa se c'è GoodSync acceso.
+Se invece GoodSync è spento, anche se c'è il worker per l'esecuzione automatica attivo, il computer va in sleep e, non appena si riprende, esegue i job che non è riuscito a eseguire prima.</p>
+<h2 id="salvataggio-log">Salvataggio log</h2>
+<p>I log sono salvati nella cartella <em>gsdata</em>, sia nel lato sinistro che in quello destro della sincronizzazione.</p>
+<h2 id="invio-log-tramite-email">Invio log tramite email</h2>
+<p>In <code>Preferences-&gt;Connection-&gt;SMTP Options</code> ho impostato Gmail come SMTP server. Visto che su Google ho 2FA ho dovuto creare una password specifica per l'app su <a href="https://myaccount.google.com/apppasswords">https://myaccount.google.com/apppasswords</a></p>
               
             </div>
           </div>
@@ -168,10 +191,10 @@ Visti i nuovi limiti (max 3 dispositivi) se non è necessario sincronizzare tutt
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="exactscan.html" class="btn btn-neutral float-right" title="ExactScan">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="google-drive.html" class="btn btn-neutral float-right" title="Google Drive">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="dotbot.html" class="btn btn-neutral" title="dotbot"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="git.html" class="btn btn-neutral" title="git"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -199,10 +222,10 @@ Visti i nuovi limiti (max 3 dispositivi) se non è necessario sincronizzare tutt
           <a href="https://github.com/magobaol/mac-setup/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="dotbot.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="git.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="exactscan.html" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="google-drive.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
