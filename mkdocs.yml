@@ -27,6 +27,7 @@ nav:
     - applications/dropbox.md
     - applications/exactscan.md
     - applications/git.md
+    - applications/goodsync.md    
     - applications/google-drive.md
     - applications/homebrew.md
     - applications/inputrc.md

@@ -46,7 +46,8 @@ e quello che mette tutto insieme, ovvero [Homebrew bundle](https://pumpingco.de/
 - Ulysses
 - [ExactScan Pro](../applications/exactscan.md)
 - ExifRenamer
-- GoodSync
+- [GoodSync](../applications/goodsync.md)
+- Path Finder
 - Spotify
 - Skype
 - Fantastical 1

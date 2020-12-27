@@ -24,4 +24,7 @@ Bisogna aggiornare il submodule tirando giù le ultime modifiche, e poi fare com
 
 	Se l'aggiornamento viene fatto su un mac, poi sull'altro bisogna entrare nella directory del submodule e fare `git pull`.
 
+_**Aggiornamento automatico**_  
+**oh-my-zsh** controlla all'avvio se ci sono aggiornamenti e chiede se si vuole farli. In quel caso si può rispondere _Yes_ e poi limitarsi alle ultime due istruzioni indicate sopra (add e commit)
+
 [1]:	https://ohmyz.sh/

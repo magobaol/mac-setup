@@ -7,6 +7,7 @@
 - [Dropbox](dropbox.md)
 - [ExactScan](exactscan.md)
 - [git](git.md)
+- [GoodSync](goodsync.md)
 - [Google Drive](google-drive.md)
 - [Homebrew](homebrew.md)
 - [.inputrc](inputrc.md)

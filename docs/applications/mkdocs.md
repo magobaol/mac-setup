@@ -29,3 +29,7 @@ Maggiori info [https://www.mkdocs.org/user-guide/configuration/](https://www.mkd
 `mkdocs build`: Genera la documentazione all'interno di `./site`.  
 `mkdocs serve`: Come `build` ma in più serve la documentazione su `http://localhost:8080` e resta in watch.  
 `mkdocs gh-deploy`: Come `build` e in più invia il compilato su uno specifico branch del repo Github, configurato per essere la sorgente del sito GH Pages di quel repo.
+
+## Informazioni su mac-setup
+
+Per informazioni specifiche su questo progetto di documentazione, vai [qui](../about.md).
