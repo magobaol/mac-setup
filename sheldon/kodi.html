@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Sheldon (NAS) - mac-setup</title>
+  <title>Kodi - mac-setup</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Sheldon (NAS)";
-    var mkdocs_page_input_path = "sheldon/index.md";
+    var mkdocs_page_name = "Kodi";
+    var mkdocs_page_input_path = "sheldon/kodi.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -134,10 +134,10 @@
     
       
     
-    <li>Sheldon (NAS)</li>
+    <li>Kodi</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/magobaol/mac-setup/edit/master/docs/sheldon/index.md"
+        <a href="https://github.com/magobaol/mac-setup/edit/master/docs/sheldon/kodi.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -148,12 +148,92 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="sheldon-nas">Sheldon (NAS)</h1>
-<p>Ovviamente queste info andrebbe da qualche altra parte, oppure questo progetto dovrebbe chiamarsi in modo più generico di "mac-setup", ma pazienza.</p>
-<ul>
-<li><a href="transmission.html">Transmission</a></li>
-<li><a href="kodi.html">Kodi</a></li>
-</ul>
+                <h1 id="kodi">Kodi</h1>
+<p><a href="https://kodi.tv/">https://kodi.tv/</a></p>
+<h2 id="installazione">Installazione</h2>
+<p>Se sheldon si tratta di abilitare MySQL Maria DB e avere un paio di cartelle con i media condivise.<br />
+Le cartelle sono <code>Multimedia/serie tv</code> e <code>Multimedia/film</code></p>
+<h2 id="usare-mysql-come-sorgente-per-la-libreria">Usare MySQL come sorgente per la libreria</h2>
+<p>Impostando Kodi per dirgli di usare MySQL per gestire la libreria è possibile tenere in sync tutte le informazioni tra i vari client. Per farlo bisogna mettere un file chiamato <code>advancedsettings.xml</code> nella <code>userdata</code> folder, che si trova in posti differenti a seconda del sistema operativo del cliente. Per info vedere <a href="https://kodi.wiki/view/Userdata">qui</a></p>
+<p>Esempio di <code>advancedsettings.xml</code>:</p>
+<pre><code>&lt;advancedsettings&gt;
+  &lt;videodatabase&gt;
+    &lt;type&gt;mysql&lt;/type&gt;
+    &lt;host&gt;10.0.0.5&lt;/host&gt;
+    &lt;port&gt;3306&lt;/port&gt;
+    &lt;user&gt;kodi&lt;/user&gt;
+    &lt;pass&gt;password&lt;/pass&gt;
+  &lt;/videodatabase&gt; 
+  &lt;musicdatabase&gt;
+    &lt;type&gt;mysql&lt;/type&gt;
+    &lt;host&gt;10.0.0.5&lt;/host&gt;
+    &lt;port&gt;3306&lt;/port&gt;
+    &lt;user&gt;kodi&lt;/user&gt;
+    &lt;pass&gt;password&lt;/pass&gt;
+  &lt;/musicdatabase&gt;
+  &lt;videolibrary&gt;
+    &lt;importwatchedstate&gt;true&lt;/importwatchedstate&gt;
+    &lt;importresumepoint&gt;true&lt;/importresumepoint&gt;
+  &lt;/videolibrary&gt;
+&lt;/advancedsettings&gt;
+</code></pre>
+
+<h2 id="modifica-dei-percorsi-dei-file">Modifica dei percorsi dei file</h2>
+<p>Se per qualche motivo i file multimediali fruiti su Kodi cambiano posizione (o magari cambia il nome del server) è possibile eseguire delle operazioni manuali sul database per evitare di perdere le informazioni della libreria (come i watch status).</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Il database potrebbe chiamarsi diversamente, magari lo cambiano tra una versione e l'altra, ma il prefisso dovrebbe essere sempre <code>MyVideos</code></p>
+</div>
+<p>Le query seguenti sono quelle che ho eseguito quando ho cambiato il NAS, per cui è cambiato il nome del server: l'effettiva modifica quindi potrebbe essere diversa, ma la sostanza è quella.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Prima di procedere è meglio farsi un backup del database, si può fare sempre da phpMyAdmin</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Prima di procedere è opportuno eseguire le query select per verificare che siano corrette</p>
+</div>
+<h3 id="modifica-dei-path-per-le-serie-tv">Modifica dei path per le serie tv</h3>
+<p><strong>Modificare la tabella dei path per le serie tv</strong></p>
+<pre><code class="sql">--Query di controllo
+SELECT *, REPLACE(strPath, &quot;smb://FRINK/&quot;, &quot;smb://sheldon/&quot;) from path WHERE idPath IN (select DISTINCT c19 from episode);
+
+--Query di modifica
+UPDATE path set strPath = REPLACE(strPath, &quot;smb://FRINK/&quot;, &quot;smb://sheldon/&quot;) WHERE idPath IN (select DISTINCT c19 from episode);
+</code></pre>
+
+<p><strong>Modificare la tabella degli episodi per le serie tv</strong></p>
+<pre><code class="sql">--Query di controllo
+select *, REPLACE(c18, &quot;smb://FRINK/&quot;, &quot;smb://sheldon/&quot;) from episode;
+
+--Query di modifica
+UPDATE episode set c18 = REPLACE(c18, &quot;smb://FRINK/&quot;, &quot;smb://sheldon/&quot;);
+</code></pre>
+
+<h3 id="modifica-dei-path-per-i-film">Modifica dei path per i film</h3>
+<p>La struttura database dei path per i film è leggermente diversa da quella per le serie tv, quindi le query sono leggermente diverse.</p>
+<p><strong>Modificare la tabella dei path per i film</strong></p>
+<pre><code class="sql">--Query di controllo
+select *, REPLACE(strPath, &quot;smb://FRINK/&quot;, &quot;smb://sheldon/&quot;) from path where idPath in (select DISTINCT c23 from movie) OR idParentPath IN (select DISTINCT c23 from movie);
+
+--Query di modifica
+UPDATE path set strPath = REPLACE(strPath, &quot;smb://FRINK/&quot;, &quot;smb://sheldon/&quot;) where idPath IN (select DISTINCT c23 from movie) OR idParentPath IN (select DISTINCT c23 from movie);
+</code></pre>
+
+<p><strong>Modificare la tabella dei film</strong></p>
+<pre><code class="sql">--Query di controllo
+select *, REPLACE(c22, &quot;smb://FRINK/&quot;, &quot;smb://sheldon/&quot;) from movie;
+
+--Query di modifica
+UPDATE movie set c22 = REPLACE(c22, &quot;smb://FRINK/&quot;, &quot;smb://sheldon/&quot;);
+</code></pre>
+
+<h3 id="aggiornamento-della-sorgente-dei-file">Aggiornamento della sorgente dei file</h3>
+<p>Dopo aver modificato i path nel database è necessario aggiornare anche il percorso della "source", e questo va fatto dentro Kodi in ogni client.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Non bisogna rimuovere la sorgente dei film (o serie tv) e rimetterla, ma entrare in modifica e cambiare il percorso. Chiederà probabilmente di reinserire nome utente e password per accedere al disco di rete.</p>
+</div>
               
             </div>
           </div>
