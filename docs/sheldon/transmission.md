@@ -15,6 +15,9 @@ Bisogna cambiare due cose fondamentalmente: `rpc-username` e `rpc-password`.
 La password va scritta in chiaro tra virgolette e poi al riavvio del server viene crittata con qualche algoritmo, quindi la si ritroverà non leggibile.  
 Ho provato anche a modificare la `rpc-port` per fargli usare la stessa che usavo con Frink, ma in quel modo non funzionava più il link dall'icona che viene messa tra le applicazioni del NAS: il link infatti apre l'interfaccia web per forza sulla porta 49092, non importa quello che c'è scritto nel file di configurazione.
 
+### Permessi di lettura/scrittura
+Nel file settings.json, modificare la proprietà umask e impostarla a 2, in modo che i file e le directory create abbiano i permessi di scrittura anche per il gruppo
+
 ## Interfaccia web
 
 Di base Transmission per QNAP mette a disposizione un client web per gestire i download (ma non la configurazione, come si poteva fare una volta) ma è piuttosto basica.
