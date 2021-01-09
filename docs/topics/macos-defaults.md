@@ -14,5 +14,5 @@ Altri riferimenti utili:
 
 ## Configurazioni da fare a mano
 
-- Shortcut per switchare tra finestre della stessa applicazione (CMD+\):  
+- Shortcut per switchare tra finestre della stessa applicazione (`CMD+\`):  
 `System Preferences -> Keyboard -> Shortcuts -> Keyboard -> Move focus to next window`

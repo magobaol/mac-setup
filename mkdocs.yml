@@ -11,13 +11,13 @@ markdown_extensions:
   - admonition    
 nav:
   - Home: index.md
-  - About: about.md
+  - About mac-setup: about.md
   - Argomenti:
     - topics/mac-installation.md
     - topics/dotfiles.md
     - topics/mac-automation.md
     - topics/macos-defaults.md
-    - topics/dev-config.md
+    - topics/dev-config.md    
   - Applicazioni:
     - applications/index.md
     - applications/1password.md
@@ -38,4 +38,4 @@ nav:
     - applications/oh-my-zsh.md
     - applications/spotify-cli.md
     - applications/ssh.md
-    - applications/zsh.md    
+    - applications/zsh.md
