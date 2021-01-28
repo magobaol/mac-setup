@@ -29,3 +29,21 @@ cd /share/MD0_DATA/.qpkg/gs-server/
 ## Connessione diretta
 
 Il NAS può essere collegato direttamente al computer solo tramite LAN, tramite [questa procedura](https://www.qnap.com/en/how-to/knowledge-base/article/how-to-set-up-a-direct-connection-test/): per spostare grosse quantità di dati ne vale la pena, perché si passa da circa 2.5 MB/s a circa 70 MB/s.
+
+## Shell
+Quando si fa login in ssh, viene mostrata una fastidiosa console di management, a causa di questa riga contenuta nel file `/etc/profile`
+
+```bash
+[[ "admin" = "$USER" ]] && /sbin/qts-console-mgmt -f
+```
+
+Il file `/etc/profile` viene riscritto ad ogni riavvio, quindi il supporto QNAP mi aveva suggerito di rimuovere la riga tramite sed usando `autorun.sh` come [descritto qui](https://wiki.qnap.com/wiki/Running_Your_Own_Application_at_Startup) (la sezione che interessa a me per Sheldon è quella "All HAL-based Intel and AMD NAS use ...").  
+Pare però che il trucchetto non funzioni per `/etc/profile`, quindi ho creato un file in `/share/homes/admin` chiamato `fix-shell.sh` con questo contenuto:
+
+```bash
+sed -i '/qts-console-mgmt/d' /etc/profile
+sed -i "s/alias ls='\/bin\/ls -F'/alias ls='\/bin\/ls -F --color'/" /etc/profile
+```
+
+(la seconda riga provvede a colorare la shell).  
+Potrei richiamare il file con un cron una volta al giorno, tanto per essere sicuro che venga eseguito, ma visto che non prevedo di riavviare spesso il nas mi va bene anche chiamarlo manualmente quando mi capita di riavviarlo.
