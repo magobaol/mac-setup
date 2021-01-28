@@ -154,6 +154,39 @@
 <li><a href="transmission.html">Transmission</a></li>
 <li><a href="kodi.html">Kodi</a></li>
 </ul>
+<h2 id="login-page">Login page</h2>
+<p>A partire da una certa versione di QTS, i geni hanno cambiato la pagina di login mettendo una <code>textarea</code> al posto di un <code>input</code> per lo username, e questo impedisce a 1Password di funzionare.<br />
+<a href="https://1password.community/discussion/comment/572888/#Comment_572888">Qui</a> ho trovato un semplice tampermonkey per risolvere, e l'ho installato (è anche salvato in <code>vita-digitale/mac-automation</code>)</p>
+<h2 id="hbs">HBS</h2>
+<p>Ci sarebbe tantissimo da scrivere, ma per il momento lascio il riferimento a un thread che spiega bene le differenze tra backup, sync etc. (Ricorda che un backup con Dedup disattivato agisce praticamente come un sync).<br />
+<a href="https://forum.qnap.com/viewtopic.php?t=153272">https://forum.qnap.com/viewtopic.php?t=153272</a></p>
+<h2 id="goodsync">GoodSync</h2>
+<pre><code>cd /share/MD0_DATA/.qpkg/gs-server/
+
+./gsync_x64new /gs-account-enroll=francesco.face@gmail.com
+
+./gsync_x64new /activate
+
+./gsync_x64new /sync-jobs-accts
+
+./gsync_x64new sync &quot;francesco - docs&quot;
+</code></pre>
+
+<h2 id="connessione-diretta">Connessione diretta</h2>
+<p>Il NAS può essere collegato direttamente al computer solo tramite LAN, tramite <a href="https://www.qnap.com/en/how-to/knowledge-base/article/how-to-set-up-a-direct-connection-test/">questa procedura</a>: per spostare grosse quantità di dati ne vale la pena, perché si passa da circa 2.5 MB/s a circa 70 MB/s.</p>
+<h2 id="shell">Shell</h2>
+<p>Quando si fa login in ssh, viene mostrata una fastidiosa console di management, a causa di questa riga contenuta nel file <code>/etc/profile</code></p>
+<pre><code class="bash">[[ &quot;admin&quot; = &quot;$USER&quot; ]] &amp;&amp; /sbin/qts-console-mgmt -f
+</code></pre>
+
+<p>Il file <code>/etc/profile</code> viene riscritto ad ogni riavvio, quindi il supporto QNAP mi aveva suggerito di rimuovere la riga tramite sed usando <code>autorun.sh</code> come <a href="https://wiki.qnap.com/wiki/Running_Your_Own_Application_at_Startup">descritto qui</a> (la sezione che interessa a me per Sheldon è quella "All HAL-based Intel and AMD NAS use ...").<br />
+Pare però che il trucchetto non funzioni per <code>/etc/profile</code>, quindi ho creato un file in <code>/share/homes/admin</code> chiamato <code>fix-shell.sh</code> con questo contenuto:</p>
+<pre><code class="bash">sed -i '/qts-console-mgmt/d' /etc/profile
+sed -i &quot;s/alias ls='\/bin\/ls -F'/alias ls='\/bin\/ls -F --color'/&quot; /etc/profile
+</code></pre>
+
+<p>(la seconda riga provvede a colorare la shell).<br />
+Potrei richiamare il file con un cron una volta al giorno, tanto per essere sicuro che venga eseguito, ma visto che non prevedo di riavviare spesso il nas mi va bene anche chiamarlo manualmente quando mi capita di riavviarlo.</p>
               
             </div>
           </div>

@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Transmission - mac-setup</title>
+  <title>Ricette - mac-setup</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Transmission";
-    var mkdocs_page_input_path = "sheldon/transmission.md";
+    var mkdocs_page_name = "Ricette";
+    var mkdocs_page_input_path = "topics/recipes.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -59,15 +59,15 @@
                 </ul>
                 <p class="caption"><span class="caption-text">Argomenti</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../topics/mac-installation.html">Installazione di un computer da zero</a>
+                    <li class="toctree-l1"><a class="reference internal" href="mac-installation.html">Installazione di un computer da zero</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../topics/dotfiles.html">dotfiles</a>
+                    <li class="toctree-l1"><a class="reference internal" href="dotfiles.html">dotfiles</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../topics/mac-automation.html">mac-automation</a>
+                    <li class="toctree-l1"><a class="reference internal" href="mac-automation.html">mac-automation</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../topics/macos-defaults.html">macOS defaults</a>
+                    <li class="toctree-l1"><a class="reference internal" href="macos-defaults.html">macOS defaults</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../topics/dev-config.html">Configurazioni di sviluppo</a>
+                    <li class="toctree-l1"><a class="reference internal" href="dev-config.html">Configurazioni di sviluppo</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Applicazioni</span></p>
@@ -134,10 +134,10 @@
     
       
     
-    <li>Transmission</li>
+    <li>Ricette</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/magobaol/mac-setup/edit/master/docs/sheldon/transmission.md"
+        <a href="https://github.com/magobaol/mac-setup/edit/master/docs/topics/recipes.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -148,33 +148,13 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="transmission">Transmission</h1>
-<p><a href="https://transmissionbt.com/">https://transmissionbt.com/</a></p>
-<h2 id="installazione">Installazione</h2>
-<p>Il pacchetto da installare si scarica da qui: <a href="https://www.qnapclub.eu/en/qpkg/208">https://www.qnapclub.eu/en/qpkg/208</a> (se il link non funziona, fare una ricerca per "transmission" su quello stesso sito web).<br />
-La versione per Sheldon è <code>TS-NASX86_64</code>.</p>
-<p>Il pacchetto va installato manualmente tramite App Center, e poi va configurato.</p>
-<h2 id="configurazione">Configurazione</h2>
-<p>Il file da modificare è questo: <code>/share/MD0_DATA/.qpkg/QTransmission3/etc/settings.json</code>  </p>
-<p>Bisogna cambiare due cose fondamentalmente: <code>rpc-username</code> e <code>rpc-password</code>.<br />
-La password va scritta in chiaro tra virgolette e poi al riavvio del server viene crittata con qualche algoritmo, quindi la si ritroverà non leggibile.<br />
-Ho provato anche a modificare la <code>rpc-port</code> per fargli usare la stessa che usavo con Frink, ma in quel modo non funzionava più il link dall'icona che viene messa tra le applicazioni del NAS: il link infatti apre l'interfaccia web per forza sulla porta 49092, non importa quello che c'è scritto nel file di configurazione.</p>
-<h3 id="permessi-di-letturascrittura">Permessi di lettura/scrittura</h3>
-<p>Nel file settings.json, modificare la proprietà umask e impostarla a 2, in modo che i file e le directory create abbiano i permessi di scrittura anche per il gruppo</p>
-<h2 id="interfaccia-web">Interfaccia web</h2>
-<p>Di base Transmission per QNAP mette a disposizione un client web per gestire i download (ma non la configurazione, come si poteva fare una volta) ma è piuttosto basica.
-Si può installare un altro pacchetto, chiamato <a href="https://www.qnapclub.eu/it/qpkg/984">Transmission web control</a> che è un po' meglio. Si accede poi a <a href="http://10.0.0.5:49092/transmission/web/">http://10.0.0.5:49092/transmission/web/</a></p>
-<h2 id="transmission-remote-gui">Transmission Remote GUI</h2>
-<p><a href="https://github.com/transmission-remote-gui/transgui/releases">https://github.com/transmission-remote-gui/transgui/releases</a></p>
-<h3 id="collegamento-dalla-lan">Collegamento dalla LAN</h3>
-<p><img alt="Screenshot" src="assets/transmission-remote-gui-local.png" /></p>
-<h2 id="accesso-dallesterno">Accesso dall'esterno</h2>
-<p>Con Frink ero riuscito a configurare per accedere dall'esterno anche tramite Remote GUI, ma su Sheldon non ci sono riuscito e non valeva la pena sbattersi tanto. L'interfaccia web è comunque raggiungibile, credo sia più che sufficiente per le necessità minime.<br />
-Basta collegarsi a <a href="http://sheldon14.myqnapcloud.com:9081/transmission/web/">http://sheldon14.myqnapcloud.com:9081/transmission/web/</a> dopo aver impostato correttamente il port forwarding ovviamente.</p>
-<p>Qualora si dovesse riuscire a cambiare le cose, queste sono le impostazioni per Remote GUI: 
-<img alt="Screenshot" src="assets/transmission-remote-gui-remote.png" /></p>
-<h3 id="port-forwarding">Port forwarding</h3>
-<p><img alt="Screenshot" src="assets/fritz-port-forwarding-transmission.png" /></p>
+                <h1 id="ricette">Ricette</h1>
+<h2 id="creare-immagini-iso-su-macos">Creare immagini ISO su macOS</h2>
+<p>La cosa migliore è usare la riga di comando:</p>
+<pre><code class="bash">hdiutil makehybrid -iso -joliet -o tablet-andrea-2016-12.iso ~/wip-archive/tablet-andrea
+</code></pre>
+
+<p>Tramite Disk Utility infatti non è possibile creare direttamente delle ISO, ma solo cdr o dmg.</p>
               
             </div>
           </div>
