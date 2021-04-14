@@ -32,15 +32,19 @@ e quello che mette tutto insieme, ovvero [Homebrew bundle](https://pumpingco.de/
 - ClipMenu
 - Popclip
 - Chrome
+- [Keyboard Maestro](../applications/keyboard-maestro.md)
+- [Moom](../applications/moom.md)
+- Setapp
+- Slack
 
 ## Applicazioni essenziali
 - Omnifocus
-- Firefox
+- Firefox Developer Edition
 - Franz
 - Bear
 - Drafts
 - Atom
-- Streamdeck
+- [Stream Deck](../applications/stream-deck.md)
 - DaisyDisk
 - DayOne
 - Ulysses

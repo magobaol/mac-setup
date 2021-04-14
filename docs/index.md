@@ -5,7 +5,7 @@
 - [mac-automation](topics/mac-automation.md)
 - [Configurazioni per lo sviluppo](topics/dev-config.md)
 - [Info su questa documentazione](about.md)
-- [Ricette](topics/receipts.md)
+- [Ricette](topics/recipes.md)
 
 # Extra
 - [Sheldon](sheldon/index.md)
