@@ -1,0 +1,115 @@
+{
+  "main": {
+    "id": "bf78251c8d9bfa0d",
+    "type": "split",
+    "children": [
+      {
+        "id": "8ab3e4e3eb584634",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "applications/index.md",
+            "mode": "source"
+          }
+        },
+        "group": "4a04f9b78d075116"
+      },
+      {
+        "id": "3f47934e816d23b1",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "applications/index.md",
+            "mode": "preview"
+          }
+        },
+        "group": "4a04f9b78d075116"
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b09cb6055369c437",
+    "type": "split",
+    "children": [
+      {
+        "id": "1cd14fff143a6bf4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9b3acb443eb0332d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "ea686bec05ef8b0c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "5bc343ff80ddaf44",
+    "type": "split",
+    "children": [
+      {
+        "id": "9fe4e650e3f11c95",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "97f3925ad80bfc3e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "applications/index.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "3f47934e816d23b1",
+  "lastOpenFiles": [
+    "applications/index.md",
+    "topics/mac-installation.md",
+    "applications/keyboard-maestro.md",
+    "applications/launchbar.md",
+    "applications/iterm2.md",
+    "applications/homebrew.md",
+    "index.md",
+    "applications/Untitled.md",
+    "applications/moom.md",
+    "applications/google-chrome.md"
+  ]
+}
