@@ -1,5 +1,13 @@
 # Stream Deck
 
+## Plugin
+**Hue**
+**Mute**
+
+**KMLink**
+Per Keyboard Maestro, meglio di quello ufficiale
+https://github.com/Corcules/KMlink
+
 ## Icone
 Create con lo script che ho su Shortcuts con questi parametri:
 

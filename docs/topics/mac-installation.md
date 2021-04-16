@@ -29,22 +29,24 @@ e quello che mette tutto insieme, ovvero [Homebrew bundle](https://pumpingco.de/
 - [LaunchBar](../applications/launchbar.md)
 - BetterSnapTool
 - Bartender
-- ClipMenu
-- Popclip
+- [Clipy](../applications/clipy)
+- [Popclip](../applications/popclip.md)
 - Chrome
-- [Keyboard Maestro](../applications/keyboard-maestro.md)
-- [Moom](../applications/moom.md)
-- Setapp
 - Slack
+- Firefox Developer Edition
+- Omnifocus
+- [Drafts ](../applications/drafts.md)
+- [Bear](../applications/bear.md)
+- [Moom](../applications/moom.md)
+- [Choosy](../applications/choosy.md)
+- [Keyboard Maestro](../applications/keyboard-maestro.md)
+- [Stream Deck](../applications/stream-deck.md)
+- Setapp
 
 ## Applicazioni essenziali
-- Omnifocus
-- Firefox Developer Edition
+
 - Franz
-- Bear
-- Drafts
 - Atom
-- [Stream Deck](../applications/stream-deck.md)
 - DaisyDisk
 - DayOne
 - Ulysses
@@ -54,7 +56,7 @@ e quello che mette tutto insieme, ovvero [Homebrew bundle](https://pumpingco.de/
 - Path Finder
 - Spotify
 - Skype
-- Fantastical 1
+- [Fantastical](../applications/fantastical.md)
 
 ## Altre applicazioni
 - Paw

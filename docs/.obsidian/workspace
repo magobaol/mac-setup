@@ -4,28 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "8ab3e4e3eb584634",
+        "id": "e7703751b9d1f707",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "applications/index.md",
+            "file": "applications/popclip.md",
             "mode": "source"
           }
-        },
-        "group": "4a04f9b78d075116"
-      },
-      {
-        "id": "3f47934e816d23b1",
-        "type": "leaf",
-        "state": {
-          "type": "markdown",
-          "state": {
-            "file": "applications/index.md",
-            "mode": "preview"
-          }
-        },
-        "group": "4a04f9b78d075116"
+        }
       }
     ],
     "direction": "vertical"
@@ -81,7 +68,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "applications/index.md",
+                "file": "applications/popclip.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,17 +86,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "3f47934e816d23b1",
+  "active": "e7703751b9d1f707",
   "lastOpenFiles": [
-    "applications/index.md",
-    "topics/mac-installation.md",
+    "applications/popclip.md",
+    "applications/stream-deck.md",
     "applications/keyboard-maestro.md",
-    "applications/launchbar.md",
-    "applications/iterm2.md",
-    "applications/homebrew.md",
-    "index.md",
+    "topics/macos-defaults.md",
+    "topics/receipts.md",
     "applications/Untitled.md",
+    "topics/mac-installation.md",
+    "applications/google-drive.md",
     "applications/moom.md",
-    "applications/google-chrome.md"
+    "applications/pathfinder.md"
   ]
 }

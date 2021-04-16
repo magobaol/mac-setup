@@ -16,3 +16,58 @@ Altri riferimenti utili:
 
 - Shortcut per switchare tra finestre della stessa applicazione (`CMD+\`):  
 `System Preferences -> Keyboard -> Shortcuts -> Keyboard -> Move focus to next window`
+
+### System preferences
+- Users and groups
+	- Login options
+		- Display login window as: Name and password
+- Date and Time
+	- Clock
+		- Show date and time in menu bar: on
+		- Time options: digital
+		- Use a 24-hours clock: on
+		- Show the day of the week: on
+		- Show date: on
+- Mission Control
+	- Automatically rearrange spaces: off
+	- When switching to an application, switch to a Space with open windows for the application: off
+	- Group windows by display: on
+	- Disaply have separate Spaces: on
+	- Hot corners
+		- Top left: Application window
+		- Top right: Desktop
+
+- Notifications
+	- Mail: off
+	- Spark: on (turn off in the application, but leave on for PEC)
+
+- Keyboard
+	- Keyboard
+		- Key repeat: fast
+		- Delay until repeast: short
+	- Shortcuts
+		- Mission control
+			- Mission Control: off
+			- Application windows: off
+			- Switch to desktop 1: ⌃1
+			- Switch to desktop 2: ⌃2
+			- Switch to desktop 3: ⌃3
+			- Switch to desktop 4: ⌃4
+		- Spotlight
+			- Show spotlight search: ⌥⌘Space
+			- Show Finder search window: off 
+- Trackpad
+	- Point and click
+		- Tap to click: on
+	- Scroll & zoom
+		- Scroll direction: natural
+
+- Accessibility
+	- Pointer Control
+		- Mouse & Trackpad
+			- Trackpad options
+				- Enable dragging: on + without drag lock
+
+
+**Note dell'ultima installazione (2021-04-15)**
+C'erano giusto un paio di cose in questo file .macos, che tra l'altro avevo già sistemato a mano. La maggior parte evidentemente non le ho salvate.
