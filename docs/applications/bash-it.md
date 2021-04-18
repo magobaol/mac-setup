@@ -38,7 +38,13 @@ A parte quelle di default, che ancora non ho capito bene tutte cosa fanno, ho fa
 
 Abilita l’autocompletato dei nomi degli host, andandoli a prendere nel file hosts. Questo vuol dire che per ogni connessione ssh che si vuole autocompletare deve esserci lo stesso host definito nel file hosts. È lo stesso funzionamento che c’è con **zsh**.
 
+## Hostname
+Nella configurazione mia di bash-it al prompt vedo il nome del computer, esattamente l'`$HOSTNAME`. Questa variabile viene impostata durante l'installazione e quindi, sul computer di Hootsuite, viene messo il nome di default è che Francesco Face.
+Per cambiare l'hostname:
 
+```bash
+sudo scutil --set HostName <new name>
+```
 
 ## Storia personale con bash-it
 Sono stato un po’ indeciso se passare da bash-it o meno, perché ha un fottio di roba e non sono affatto sicuro di utilizzarla tutta, ma alla fine ho pensato che fosse più semplice passare da qualcosa di già esistente piuttosto che andare a configurare tutto piano piano, che poi non so neanche bene come fare. Per esempio, i temi di bash-it (che cambiano colori e font delle directory, il prompt e così via) non saprei proprio come metterli.

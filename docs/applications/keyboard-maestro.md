@@ -27,3 +27,6 @@ Background: bianco (anche se sarebbe meglio trasparente)
 
 Pensavo di usarlo per il clip delle url ma poi sono riuscito a fare una bookmarklet diretta verso Drafts, quindi non mi è servito.
 Penso comunque che potrebbe servirmi in futuro visto che le macro possono ottenere un solo parametro
+
+**Desktop spaces navigation**
+https://forum.keyboardmaestro.com/t/desktop-spaces-macros-for-navigation-and-window-management/21507

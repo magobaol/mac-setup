@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "e7703751b9d1f707",
+        "id": "40e37c889afd8bf6",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "applications/popclip.md",
+            "file": "topics/macos-defaults.md",
             "mode": "source"
           }
         }
@@ -39,7 +39,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "macos",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -48,7 +48,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -68,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "applications/popclip.md",
+                "file": "topics/macos-defaults.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -86,17 +87,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "e7703751b9d1f707",
+  "active": "40e37c889afd8bf6",
   "lastOpenFiles": [
-    "applications/popclip.md",
-    "applications/stream-deck.md",
-    "applications/keyboard-maestro.md",
     "topics/macos-defaults.md",
-    "topics/receipts.md",
-    "applications/Untitled.md",
-    "topics/mac-installation.md",
-    "applications/google-drive.md",
     "applications/moom.md",
-    "applications/pathfinder.md"
+    "applications/index.md",
+    "applications/bash-it.md",
+    "applications/omnifocus.md",
+    "applications/drafts.md",
+    "applications/bash.md",
+    "applications/spotify-cli.md",
+    "applications/keyboard-maestro.md",
+    "applications/popclip.md"
   ]
 }

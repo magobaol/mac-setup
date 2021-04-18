@@ -13,9 +13,6 @@ Quick capture: ⌃Space
 ### Clip URL
 Per Firefox:
 ```      
-
-javascript : !function () {
-
  var e = window,
 	 n = document,
 	 t = e.getSelection
@@ -32,14 +29,15 @@ javascript : !function () {
 	c = e.location.href,
 	l = "";
 
- l = o + "\\n\\n" + c + "\\n\\n" + "\[" + o + "\](" + c + "):\\n\\n",
+markdownLink = "\n\n" + "\[" + o + "\](" + c + "):\n\n",
+
+l = o + "\n\n" + c,
 
  "" != t
- ? (t = (t = (t = "> " + t).replace(/(\\r\\n|\\n+|\\r)/gm, "\\n")).replace(/\\n/g, "\\n> \\n> "), e.location.href = "[drafts5://create?text=](drafts5://create?text=)" + encodeURIComponent(l + t))
+ ? (t = (t = (t = "\n\n> " + t).replace(/(\\r\\n|\\n+|\\r)/gm, "\\n")).replace(/\\n/g, "\\n> \\n> "), e.location.href = "drafts5://create?text=" + encodeURIComponent(l + t))
 
- : e.location.href = "[drafts5://create?text=](drafts5://create?text=)" + encodeURIComponent(l)
+ : e.location.href = "drafts5://create?text=" + encodeURIComponent(l)
 
-}();
 ```
 
 che poi deve essere resa una bookmarklet, magari da qui: [Bookmarklet Creator with Script Includer - Peter Coles](https://mrcoles.com/bookmarklet/)

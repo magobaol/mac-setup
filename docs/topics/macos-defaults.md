@@ -18,6 +18,9 @@ Altri riferimenti utili:
 `System Preferences -> Keyboard -> Shortcuts -> Keyboard -> Move focus to next window`
 
 ### System preferences
+- Display
+	- Night Shift
+		- Schedule: Sunset to Sunrise
 - Users and groups
 	- Login options
 		- Display login window as: Name and password
