@@ -51,6 +51,7 @@ Altri riferimenti utili:
 	- Shortcuts
 		- Mission control
 			- Mission Control: off
+			- Turn Do Not Disturb On/Off: F5
 			- Application windows: off
 			- Switch to desktop 1: ⌃1
 			- Switch to desktop 2: ⌃2
@@ -59,6 +60,9 @@ Altri riferimenti utili:
 		- Spotlight
 			- Show spotlight search: ⌥⌘Space
 			- Show Finder search window: off 
+		
+		- Use keyboard navigation to move focus between controls: on
+
 - Trackpad
 	- Point and click
 		- Tap to click: on

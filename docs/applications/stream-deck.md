@@ -2,7 +2,10 @@
 
 ## Plugin
 **Hue**
+Tra i plugin ufficiali
+
 **Mute**
+Tra i plugin ufficiali
 
 **KMLink**
 Per Keyboard Maestro, meglio di quello ufficiale

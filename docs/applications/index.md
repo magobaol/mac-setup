@@ -1,6 +1,7 @@
 # Tutte le applicazioni
 
 - [1Password](1password.md)
+- [Mail](Mail.md)
 - [bash-it](bash-it.md)
 - [bash](bash.md)
 - [Bear](bear.md)
